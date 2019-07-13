@@ -1,23 +1,20 @@
 package main
 
 import (
+	. "github.com/robfig/cron/v3"
 	"log"
 	"time"
-
-	"github.com/robfig/cron"
 )
 
 func main() {
 	log.Println("Starting...")
 
-	c := cron.New()
+	c := New()
 	c.AddFunc("* * * * * *", func() {
 		log.Println("Run models.CleanAllTag...")
-		models.CleanAllTag()
 	})
 	c.AddFunc("* * * * * *", func() {
 		log.Println("Run models.CleanAllArticle...")
-		models.CleanAllArticle()
 	})
 
 	c.Start()

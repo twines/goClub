@@ -14,7 +14,7 @@ import (
 
 func main() {
 	router := routers.InitRouter()
-	router.LoadHTMLGlob("resource/view/**/*.html")
+	router.LoadHTMLGlob("resource/view/**/**/*")
 	router.Static("/assets", "./resource/assets")
 	s := &http.Server{
 		Addr:           fmt.Sprintf(":%d", setting.HTTPPort),

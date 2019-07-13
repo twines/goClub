@@ -6,12 +6,12 @@ import (
 )
 
 func GetAll(c *gin.Context) {
-	c.HTML(http.StatusOK, "/index/index.html", gin.H{
+	c.HTML(http.StatusOK, "/web/index/index.html", gin.H{
 		"title": "Users",
 	})
 }
 func Player(c *gin.Context) {
-	c.HTML(http.StatusOK, "/player/index.html", gin.H{
+	c.HTML(http.StatusOK, "/web/player/index.html", gin.H{
 		"title": "Users",
 	})
 }
